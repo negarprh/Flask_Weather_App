@@ -1,0 +1,23 @@
+.temperature.hot {
+    color: #e53e3e;
+}
+
+.temperature.cold {
+    color: #3182ce;
+}
+.forecast {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.forecast-day {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}

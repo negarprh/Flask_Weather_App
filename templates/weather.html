@@ -1,0 +1,46 @@
+<!-- weather.html -->
+{% extends "base.html" %}
+
+{% block title %}Weather Dashboard{% endblock %}
+
+{% block content %}
+    <div class="weather-card">
+        <h2>Current Weather</h2>
+        <div class="weather-info">
+            <p class="temperature">{{ weather.temperature }}°C</p>
+            <p class="condition">{{ weather.condition }}</p>
+            <div class="details">
+                <p>Humidity: {{ weather.humidity }}%</p>
+                <p>Wind Speed: {{ weather.wind_speed }} km/h</p>
+            </div>
+        </div>
+    </div>
+
+<div class="weather-info">
+    <p class="icon">{{ weather.icon }}</p>
+    <p class="temperature">{{ weather.temperature }}°C</p>
+    ...
+</div>
+
+
+{% if weather.temperature > 30 %}
+    <p class="temperature hot">{{ weather.temperature }}°C</p>
+{% elif weather.temperature < 10 %}
+    <p class="temperature cold">{{ weather.temperature }}°C</p>
+{% else %}
+    <p class="temperature">{{ weather.temperature }}°C</p>
+{% endif %}
+
+<h2>Forcast for Next 3 Days</h2>
+
+<div class="forecast">
+    {% for day in forecast %}
+    <div class="forecast-day">
+        <h3>{{ day.day }}</h3>
+        <p>{{ day.temp }}°C</p>
+        <p>{{ day.condition }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
